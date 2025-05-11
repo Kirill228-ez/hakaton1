@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Квест: Хогвартс</title>
+  <link rel="stylesheet" href="seven.css">
+</head>
+<nav>
+  <a href="index.html">Главная</a>
+  <a href="houses.html">Факультеты</a>
+  <a href="staff.html">Преподаватели</a>
+  <a href="items.html">Магические предметы</a>
+  <a href="characters.html">Персонажи</a>
+  <a href="watch.html">Просмотр</a>
+</nav>
+<body>
+
+  <h1>Квест по Хогвартсу</h1>
+
+  <div id="step1">
+    <p>Ты стоишь у ворот Хогвартса. Что ты сделаешь?</p>
+    <div class="option" onclick="goToStep2()">Зайти в замок</div>
+    <div class="option" onclick="showResult('Ты упустил своё волшебное приключение!')"><a href="index.html">Уйти домой</a></div>
+  </div>
+
+  <div id="step2" class="hidden">
+    <p>Шляпа распределения готова! Какой факультет ты выбираешь?</p>
+    <div class="option" onclick="showResult('Ты на факультете Гриффиндор — смелость и отвага! 🦁')">Гриффиндор</div>
+    <div class="option" onclick="showResult('Ты на факультете Когтевран — мудрость и ум! 🦅')">Когтевран</div>
+    <div class="option" onclick="showResult('Ты на факультете Пуффендуй — доброта и трудолюбие! 🦡')">Пуффендуй</div>
+    <div class="option" onclick="showResult('Ты на факультете Слизерин — амбиции и решительность! 🐍')">Слизерин</div>
+  </div>
+
+  <div class="result" id="result"></div>
+
+  <script>
+    function showResult(text) {
+      document.getElementById('result').innerText = text;
+      document.getElementById('step1').classList.add('hidden');
+      document.getElementById('step2').classList.add('hidden');
+    }
+
+    function goToStep2() {
+      document.getElementById('step1').classList.add('hidden');
+      document.getElementById('step2').classList.remove('hidden');
+    }
+  </script>
+<footer>
+    <p>© 2025 Все права защищены.</p>
+  </footer>
+</body>
+</html>
